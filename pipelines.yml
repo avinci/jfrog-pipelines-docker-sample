@@ -58,11 +58,20 @@ pipelines:
           outputResources:
             - name: docker_img
 
+      - name: docker_test
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: docker_push
+        execution:
+          onExecute:
+            - echo "run some test automation platform here"
+
       - name: docker_publish_build
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: docker_push
+            - name: docker_test
           outputResources:
             - name: docker_dev_build_info
 

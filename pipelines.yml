@@ -12,7 +12,7 @@ resources:
     configuration:
       registry: bsArt                              # <-- replace with your artifactory integration
       sourceRepository: docker-dev-local           # <-- required if registry is Artifactory
-      imageName: platform.jfrog-pipelines.com/docker-dev-local/dockerApp  # < -- replace with your image path and name
+      imageName: platform.jfrog-pipelines.com/docker-dev-local/docker_app  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
       
@@ -39,7 +39,7 @@ pipelines:
           affinityGroup: docker_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: platform.jfrog-pipelines.com/docker-dev-local/dockerApp  # replace with your image path and name
+          dockerImageName: platform.jfrog-pipelines.com/docker-dev-local/docker_app  # replace with your image path and name
           dockerImageTag: ${run_number}
           inputResources:
             - name: docker_repo

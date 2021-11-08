@@ -7,7 +7,7 @@ resources:
       branches:
         include: master
 
-  - name: docker_image
+  - name: docker_img
     type: Image
     configuration:
       registry: bsArt                              # <-- replace with your artifactory integration
@@ -15,7 +15,7 @@ resources:
       imageName: platform.jfrog-pipelines.com/docker-dev-local/docker_app  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
-      
+
   - name: docker_dev_build_info
     type: BuildInfo
     configuration:
@@ -56,7 +56,7 @@ pipelines:
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: docker_image
+            - name: docker_img
 
       - name: docker_publish_build
         type: PublishBuildInfo

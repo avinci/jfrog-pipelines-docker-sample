@@ -61,8 +61,8 @@ pipelines:
       - name: docker_test
         type: Bash
         configuration:
-          inputSteps:
-            - name: docker_push
+          inputResources:
+            - name: docker_img
         execution:
           onExecute:
             - echo "run some test automation platform here"

@@ -21,14 +21,7 @@ resources:
     configuration:
       sourceArtifactory: bsArt
       buildName: dockerBuild
-      buildNumber: 1    
-
-#  - name: docker_promoted_build_info
-#    type: BuildInfo
-#    configuration:
-#      sourceArtifactory: bsArt
-#      buildName: dockerBuild
-#      buildNumber: 1
+      buildNumber: 1
 
 pipelines:
   - name: docker_dev_pipeline
@@ -75,14 +68,4 @@ pipelines:
           outputResources:
             - name: docker_dev_build_info
 
-#      - name: promote_dbp_build
-#        type: PromoteBuild
-#        configuration:
-#          targetRepository: demo-pipelines
-#          integrations:
-#            - name: art
-#          inputResources:
-#            - name: dbp_build_info
-#          outputResources:
-#            - name: dbp_promoted_build_info
 

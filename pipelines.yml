@@ -24,7 +24,7 @@ resources:
       buildNumber: 1
 
 pipelines:
-  - name: docker_dev_pipeline
+  - name: docker_dev_sample
     steps:
       - name: docker_build
         type: DockerBuild
